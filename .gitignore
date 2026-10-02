@@ -1,0 +1,42 @@
+# --- dependencies ---
+node_modules/
+.pnp
+.pnp.js
+
+# --- build output ---
+dist/
+build/
+client/dist/
+server/dist/
+
+# --- environment / secrets ---
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# --- runtime data (sandbox memory-driver datastore, uploads, logs) ---
+server/.data/
+.data/
+uploads/
+*.log
+logs/
+npm-debug.log*
+
+# --- test / coverage ---
+coverage/
+.vite/
+*.tsbuildinfo
+
+# --- editors / OS ---
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# --- image pipeline source assets (generated WebP is committed) ---
+# `npm run images` reads full-resolution photography from client/assets-src/ and
+# writes optimised WebP into client/public/img/products/. Only the WebP output is
+# versioned — the sources are ~20 MB of PNG and are regenerable from the CDN.
+client/scripts/_sources/
+client/assets-src/

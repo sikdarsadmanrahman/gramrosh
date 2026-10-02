@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2c7432" />
+
+    <!-- Filled per-route by <Seo/>; these are the crawlable defaults. -->
+    <title>Gramrosh — Fresh &amp; Organic Food from Bangladesh</title>
+    <meta
+      name="description"
+      content="Raw Sundarban honey, pure cow ghee, organic gur, kalijira rice and gift combos. Lab-tested every batch, cash on delivery nationwide, free delivery over ৳2,500."
+    />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Gramrosh" />
+    <meta property="og:title" content="Gramrosh — Fresh &amp; Organic Food from Bangladesh" />
+    <meta
+      property="og:description"
+      content="Unheated raw honey, grass-fed ghee and organic staples — sourced from named farms, lab-tested batch by batch."
+    />
+    <meta property="og:image" content="/img/products/hero-market.webp" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/img/products/hero-market.webp" />
+    <link rel="preconnect" href="/" />
+
+    <!--
+      The hero image is above the fold on every visit, so hint the browser early.
+      WebP only: the whole catalogue ships as WebP from the CDN / public dir.
+    -->
+    <link rel="preload" as="image" href="/img/products/hero-market.webp" fetchpriority="high" />
+  </head>
+  <body class="bg-cream text-soil-900 antialiased">
+    <div id="root">
+      <!--
+        Painted shell: keeps the first frame from being blank white on a slow
+        connection. React replaces it on mount.
+      -->
+      <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:system-ui,sans-serif;color:#583e39">
+        <div style="text-align:center">
+          <div style="font-size:1.5rem;font-weight:700;color:#2c7432">Gramrosh</div>
+          <div style="font-size:.875rem;opacity:.7">Loading the fresh market…</div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

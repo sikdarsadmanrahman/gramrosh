@@ -1,0 +1,111 @@
+/**
+ * -----------------------------------------------------------------------------
+ *  index.css — Tailwind layers + the handful of primitives Tailwind can't do
+ * -----------------------------------------------------------------------------
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-cream text-soil-900;
+  }
+
+  /* Bengali text renders with the dedicated stack wherever it appears. */
+  [lang='bn'],
+  .font-bangla {
+    font-family: theme('fontFamily.bangla');
+  }
+
+  ::selection {
+    @apply bg-leaf-200 text-leaf-900;
+  }
+}
+
+@layer components {
+  /* ---- buttons ---- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold
+      transition-colors duration-150 focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-leaf-600
+      disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-leaf-600 text-white hover:bg-leaf-700 active:bg-leaf-800;
+  }
+
+  .btn-honey {
+    @apply btn bg-honey-500 text-white hover:bg-honey-600 active:bg-honey-700;
+  }
+
+  .btn-outline {
+    @apply btn border border-soil-200 bg-white text-soil-800 hover:border-leaf-400 hover:text-leaf-700;
+  }
+
+  .btn-ghost {
+    @apply btn text-soil-700 hover:bg-soil-100;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+
+  /* ---- form fields ---- */
+  .field {
+    @apply w-full rounded-xl border border-soil-200 bg-white px-3.5 py-2.5 text-sm text-soil-900
+      placeholder:text-soil-400 focus:border-leaf-500 focus:outline-none focus:ring-2 focus:ring-leaf-100
+      disabled:bg-soil-50 disabled:text-soil-400;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-soil-500;
+  }
+
+  .field-error {
+    @apply mt-1 text-xs font-medium text-red-600;
+  }
+
+  /* ---- surfaces ---- */
+  .card {
+    @apply rounded-2xl border border-soil-100 bg-white shadow-card;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+
+  /* ---- admin table ---- */
+  .th {
+    @apply px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-soil-500;
+  }
+
+  .td {
+    @apply px-3 py-3 text-sm text-soil-800;
+  }
+}
+
+@layer utilities {
+  /* Horizontal product rails scroll without a visible scrollbar on mobile. */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Clamp helpers for product cards. */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "gramrosh",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gramrosh — Fresh & Organic Food E-Commerce (MERN)",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c cyan,magenta \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm run dev --workspace server",
+    "dev:client": "npm run dev --workspace client",
+    "build": "npm run build --workspace client",
+    "start": "npm run start --workspace server",
+    "seed": "npm run seed --workspace server",
+    "test": "npm run test --workspace server",
+    "test:watch": "npm run test:watch --workspace server",
+    "images": "npm run images --workspace client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
